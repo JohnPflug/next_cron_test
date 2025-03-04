@@ -14,8 +14,8 @@ export async function sendMessage() {
             message: "Hello",
         },
         to: {
-            subscriberId: process.env.NEXT_PUBLIC_SUBSCRIBERID
-        },
+            subscriberId: process.env.NEXT_PUBLIC_SUBSCRIBERID as string
+        }
     });
 }
 
