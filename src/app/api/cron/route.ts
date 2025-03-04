@@ -1,46 +1,38 @@
 // "use server";
-import { Novu } from "@novu/api";
-// import axios from 'axios';
 
-const novu = new Novu({
-    secretKey: process.env.NEXT_PUBLIC_NOVU_KEY,
-});
+import sendEmail from "./novu"; // imports sendEmail from Novu.
+import getStockData from "./stockApi"; // imports getStockData function.
+import getWatchlist from "./getWatchlist";
 
-export async function GET() {
-    const res = await fetch(`https://api.twelvedata.com/quote?symbol=AAPL&apikey=${process.env.NEXT_PUBLIC_APIKEY}`);
-    const data = await res.json()
-    const result = await novu.trigger({
-        workflowId: "subscription",
-        payload: {
-            message: data,
-        },
-        to: {
-            subscriberId: process.env.NEXT_PUBLIC_SUBSCRIBERID as string,
-        },
-    });
-    console.log("Notification sent:", result);
-    return Response.json({ data })
+// This symbol array will be what we pass to the TwelveDataApi:
+// const symbolArray: string[] = ['AAPL', 'EUR/USD'];
+
+export async function GET() { // need to call this function GET.
+
+    // Fetch symbols from Watchlist table:
+    const stockSymbolArray = await getWatchlist();
+
+    try {
+        // Fetch stock data:
+        const data = await getStockData(stockSymbolArray); // symbolArray is an array of stock symbols.
+
+        // Send an email notification:
+        const message = await sendEmail();
+
+        // Return stock data as a response:
+        return Response.json(data);
+
+    } catch (error: any) {
+        // console.error("Error in GET request:", error.message);
+        return Response.json(error.message);
+    }
 }
 
 
-
-
-
-
-// export default async function GET(stockSymbol: string) {
-//     const config = {
-//         method: 'get',
-//         url: '/quote',
-//         params: {
-//             symbol: stockSymbol,
-//             apikey: process.env.NEXT_PUBLIC_APIKEY as string
-//         }
-//     };
-//     const res = await stockApi(config);
-//     const data = res.data
-//     return Response.json({ data })
+// Previous set up:
+// export async function GET() {
+//     const res = await fetch(`https://api.twelvedata.com/quote?symbol=AAPL&apikey=${process.env.NEXT_PUBLIC_APIKEY}`);
+//     const data = await res.json()
+//     const message = await sendEmail();
+//     return Response.json(data)
 // }
-
-// GET('AAPL');
-
-
