@@ -10,39 +10,6 @@
                 "name": "John Doe",
                 "email": "johndoe@example.com"
             }
-        },
-        {
-            "id": "6412abcde22345f6789bcdef",
-            "userId": "6412abcde22345f6789zxywv",
-            "stockSymbol": "GOOGL",
-            "addedAt": "2025-03-04T17:35:12.000Z",
-            "user": {
-                "id": "6412abcde22345f6789zxywv",
-                "name": "Jane Smith",
-                "email": "janesmith@example.com"
-            }
-        },
-        {
-            "id": "6412abcde32345f6789qwert",
-            "userId": "6412abcde32345f6789asdfg",
-            "stockSymbol": "EUR/USD",
-            "addedAt": "2025-03-04T18:12:45.000Z",
-            "user": {
-                "id": "6412abcde32345f6789asdfg",
-                "name": "Emily White",
-                "email": "emilywhite@example.com"
-            }
-        },
-        {
-            "id": "6412abcde32345f6789qwert",
-            "userId": "6412abcde32345f6789asdfg",
-            "stockSymbol": "EUR/USD",
-            "addedAt": "2025-03-04T18:12:45.000Z",
-            "user": {
-                "id": "6412abcde32345f6789asdfg",
-                "name": "Emily White",
-                "email": "emilywhite@example.com"
-            }
         }
     ]
 }

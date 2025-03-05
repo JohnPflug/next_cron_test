@@ -1,20 +1,20 @@
 import nodemailer from "nodemailer";
 
 const transporter = nodemailer.createTransport({
-    host: 'mxslurp.click',
-    port: 2525,
+    host: 'smtp.mailersend.net',
+    port: 587,
     secure: false,
     auth: {
-        user: 'hedhehog@mailslurp.biz',
-        pass: process.env.NEXT_PUBLIC_NODEMAILERPASS
+        user: process.env.NEXT_PUBLIC_MAILERSEND_USER,
+        pass: process.env.NEXT_PUBLIC_MAILERSEND_PASS
     }
 });
 
 export default async function mailerFunction(data: object) {
     const info = await transporter.sendMail({
-        from: 'hedhehog@mailslurp.biz',
-        to: "hedhehog@mailslurp.biz",
-        subject: "Hello",
+        from: process.env.NEXT_PUBLIC_MAILERSEND_USER,
+        to: "jack_pflug@hotmail.co.uk",
+        subject: "HedgeHog Finances Notification",
         text: JSON.stringify(data),
         // html: "<b>Hello world!</b>",
     });

@@ -11,7 +11,7 @@ export default async function getStockData(stockSymbolArray: string[]) {
         url: '/quote',
         params: {
             symbol: symbols,
-            apikey: process.env.NEXT_PUBLIC_APIKEY as string
+            apikey: process.env.NEXT_PUBLIC_TWELVEDATA_APIKEY as string
         }
     };
 

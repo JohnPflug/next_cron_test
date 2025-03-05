@@ -2,7 +2,7 @@
 
 // import sendEmail from "./novu"; // imports sendEmail from Novu.
 
-// import getWatchlist from "./getWatchlist";
+import getWatchList from "./getWatchList";
 import getStockData from "./stockApi"; // imports getStockData function.
 import mailerFunction from "./nodemailer";
 
@@ -11,10 +11,10 @@ const stockSymbolArray: string[] = ['AAPL', 'EUR/USD'];
 
 export async function GET() { // need to call this function GET.
 
-    // Fetch symbols from Watchlist table:
-    // const stockSymbolArray = await getWatchlist();
-
     try {
+        // Fetch relevant data from Watchlist table:
+        const stockSymbolArray = await getWatchList();
+
         // Fetch stock data:
         const data = await getStockData(stockSymbolArray); // symbolArray is an array of stock symbols.
 
