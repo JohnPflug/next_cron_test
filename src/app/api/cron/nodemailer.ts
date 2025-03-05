@@ -10,7 +10,7 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-export default async function mailerFunction(data) {
+export default async function mailerFunction(data: object) {
     const info = await transporter.sendMail({
         from: 'hedhehog@mailslurp.biz',
         to: "hedhehog@mailslurp.biz",
