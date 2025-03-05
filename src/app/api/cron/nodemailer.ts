@@ -10,13 +10,13 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-export default async function mailerFunction() {
+export default async function mailerFunction(data) {
     const info = await transporter.sendMail({
         from: 'hedhehog@mailslurp.biz',
         to: "hedhehog@mailslurp.biz",
         subject: "Hello",
-        text: "Hello world",
-        html: "<b>Hello world!</b>",
+        text: JSON.stringify(data),
+        // html: "<b>Hello world!</b>",
     });
 
     console.log("Message sent: %s", info.messageId);

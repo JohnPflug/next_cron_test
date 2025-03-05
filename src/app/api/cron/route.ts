@@ -1,7 +1,8 @@
 // "use server";
 
-// import getWatchlist from "./getWatchlist";
 // import sendEmail from "./novu"; // imports sendEmail from Novu.
+
+// import getWatchlist from "./getWatchlist";
 import getStockData from "./stockApi"; // imports getStockData function.
 import mailerFunction from "./nodemailer";
 
@@ -19,7 +20,7 @@ export async function GET() { // need to call this function GET.
 
         // Send an email notification:
         // const message = await sendEmail();
-        const message = await mailerFunction();
+        const message = await mailerFunction(data);
 
         // Return stock data as a response:
         return Response.json(data);
