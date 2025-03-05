@@ -1,23 +1,25 @@
 // "use server";
 
-import sendEmail from "./novu"; // imports sendEmail from Novu.
+// import getWatchlist from "./getWatchlist";
+// import sendEmail from "./novu"; // imports sendEmail from Novu.
 import getStockData from "./stockApi"; // imports getStockData function.
-import getWatchlist from "./getWatchlist";
+import mailerFunction from "./nodemailer";
 
 // This symbol array will be what we pass to the TwelveDataApi:
-// const symbolArray: string[] = ['AAPL', 'EUR/USD'];
+const stockSymbolArray: string[] = ['AAPL', 'EUR/USD'];
 
 export async function GET() { // need to call this function GET.
 
     // Fetch symbols from Watchlist table:
-    const stockSymbolArray = await getWatchlist();
+    // const stockSymbolArray = await getWatchlist();
 
     try {
         // Fetch stock data:
         const data = await getStockData(stockSymbolArray); // symbolArray is an array of stock symbols.
 
         // Send an email notification:
-        const message = await sendEmail();
+        // const message = await sendEmail();
+        const message = await mailerFunction();
 
         // Return stock data as a response:
         return Response.json(data);
