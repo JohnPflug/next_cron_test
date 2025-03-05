@@ -1,48 +1,16 @@
 {
     "Watchlist": [
         {
-            "id": "6412abcde12345f6789abcde",
-            "userId": "6412abcde12345f6789efghi",
+            "id": "1",
+            "userId": "d67d1f90-b8c6-4863-8807-bca6a005ca2b",
             "stockSymbol": "AAPL",
-            "addedAt": "2025-03-04T16:21:32.000Z",
-            "user": {
-                "id": "6412abcde12345f6789efghi",
-                "name": "John Doe",
-                "email": "johndoe@example.com"
-            }
+            "addedAt": "2025-03-04T16:21:32.000Z"
         },
         {
-            "id": "6412abcde22345f6789bcdef",
-            "userId": "6412abcde22345f6789zxywv",
+            "id": "2",
+            "userId": "67c17c2f653b9cd0aa355f27",
             "stockSymbol": "GOOGL",
-            "addedAt": "2025-03-04T17:35:12.000Z",
-            "user": {
-                "id": "6412abcde22345f6789zxywv",
-                "name": "Jane Smith",
-                "email": "janesmith@example.com"
-            }
-        },
-        {
-            "id": "6412abcde32345f6789qwert",
-            "userId": "6412abcde32345f6789asdfg",
-            "stockSymbol": "EUR/USD",
-            "addedAt": "2025-03-04T18:12:45.000Z",
-            "user": {
-                "id": "6412abcde32345f6789asdfg",
-                "name": "Emily White",
-                "email": "emilywhite@example.com"
-            }
-        },
-        {
-            "id": "6412abcde32345f6789qwert",
-            "userId": "6412abcde32345f6789asdfg",
-            "stockSymbol": "EUR/USD",
-            "addedAt": "2025-03-04T18:12:45.000Z",
-            "user": {
-                "id": "6412abcde32345f6789asdfg",
-                "name": "Emily White",
-                "email": "emilywhite@example.com"
-            }
+            "addedAt": "2025-03-04T16:21:32.000Z"
         }
     ]
 }
