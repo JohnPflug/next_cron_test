@@ -2,7 +2,6 @@
 
 // import sendEmail from "./novu"; // imports sendEmail from Novu.
 
-import getWatchList from "./getWatchList";
 import getStockData from "./stockApi"; // imports getStockData function.
 import mailerFunction from "./nodemailer";
 
@@ -13,7 +12,7 @@ export async function GET() { // need to call this function GET.
 
     try {
         // Fetch relevant data from Watchlist table:
-        const stockSymbolArray = await getWatchList();
+        // const stockSymbolArray = await getWatchList();
 
         // Fetch stock data:
         const data = await getStockData(stockSymbolArray); // symbolArray is an array of stock symbols.
