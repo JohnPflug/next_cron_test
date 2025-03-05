@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 export default async function mailerFunction(data: object) {
     const info = await transporter.sendMail({
         from: process.env.NEXT_PUBLIC_MAILERSEND_USER,
-        to: "jack_pflug@hotmail.co.uk",
+        to: process.env.NEXT_PUBLIC_MYEMAIL,
         subject: "HedgeHog Finances Notification",
         text: JSON.stringify(data),
         // html: "<b>Hello world!</b>",
